@@ -1,0 +1,21 @@
+{
+    "create-edittable": {
+        "scope": "javascript",
+        "prefix": "create-edittable",
+        "body": ["{editTable.createEditTable(tableId, {",
+            "   showIndex: true,",
+            "   showCheck: true,",
+            "   height: action.taxAct.getTableHeight()",
+        "})}"]
+    },
+    "set-editable-value":{
+        "scope": "javascript",
+        "prefix": "set-editable-value",
+        "body": ["editTable.setTableData('redutax_table', {",
+            "rows: [{",
+                "status: '0',",
+               " values: {}",
+            "}]",
+        "});"]
+    }
+}
