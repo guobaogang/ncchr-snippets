@@ -1,0 +1,8 @@
+{
+    "create-form": {
+        "scope": "javascript",
+        "prefix": "create-form",
+        "body": ["{form.createForm(formId)}"],
+        "description": "创建表单"
+    }
+}

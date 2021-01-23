@@ -1,0 +1,201 @@
+{
+    "create-editTable": {
+        "scope": "javascript",
+        "prefix": "create-editTable",
+        "body": ["{editTable.createEditTable(tableId, {",
+            "   showIndex: true,",
+            "   showCheck: true,",
+            "   showTotal: false",
+            "   cancelCustomRightMenu: false",
+            "   height: this.getTableHeight()",
+            "   onBeforeEvent: this.onBeforeEvent",
+            "   onAfterEvent: this.onAfterEvent",
+            "   onRowClick: this.onRowClick",
+            "   onRowDoubleClick: this.onRowDoubleClick",
+        "})}"],
+        "description": "创建编辑表格"
+    },
+    "editTable-delete-row": {
+        "scope": "javascript",
+        "prefix": "editTable-delete-row",
+        "body": ["/*删除行*/",
+            "editTable.delRow(tableId, index, false/*是否彻底删除，而不是在前端缓存*/);"],
+        "description": "编辑表格删除行"
+    },
+    "editTable-get-all-rows": {
+        "scope": "javascript",
+        "prefix": "editTable-get-all-rows",
+        "body": ["/*获取表格内所有行数据（包含删除项目）*/",
+            "const tableRows = editTable.getAllRows(tableId);"],
+        "description": "获取编辑表格内所有行数据"
+    },
+    "eidtTable-get-all-data":{
+        "scope": "javascript",
+        "prefix": "eidtTable-get-all-data",
+        "body": ["/*获取表格内全数据（包含删除项目）*/",
+            "const tableData = editTable.getAllData(tableId);"],
+        "description": "获取编辑表格内全数据"
+    },
+    "editTable-add-row": {
+        "scope": "javascript",
+        "prefix": "editTable-add-row",
+        "body": ["/*通过index值新增行*/",
+            "editTable.addRow(tableId, ",
+            "   0 /*增加行的位置index ,不传默认新增到最后一行； 0：默认新增到第一行*/,",
+            "   false /*是否默认聚焦到第一个可编辑字段，不传默认不聚焦*/, ",
+            "   {} /*新增行的默认值，当设置value值的时候必须设置itemtype{ a:{display, value, scale, itemtype} }*/, ",
+            "   callback);"],
+        "description": "通过index值新增行"
+    },
+    "editTable-hide-col-by-key":{
+        "scope": "javascript",
+        "prefix": "editTable-hide-col-by-key",
+        "body": ["/*根据id和column的key隐藏某列*/",
+            "editTable.hideEditTableColByKey(tableId, key);"],
+        "description": "根据id和column的key隐藏某列"
+    },
+    "editTable-show-col-by-key":{
+        "scope": "javascript",
+        "prefix": "editTable-show-col-by-key",
+        "body": ["/*根据id和column的key显示某列*/",
+            "editTable.showEditTableColByKey(tableId, key);"]
+    },
+    "editTable-set-value-by-key-index": {
+        "scope": "javascript",
+        "prefix": "editTable-set-value-by-key-index",
+        "body": ["/*根据行序号设置表格某行某个字段值*/",
+            "editTable.setValByKeyAndIndex(tableId, ",
+            "   index /*增加行的位置index ,不传默认新增到最后一行； 0：默认新增到第一行*/,",
+            "   key /*columns的键值*/, ",
+            "   { value, display, scale, isEdit } /*需要设置的值*/ ",
+            ");"],
+        "description": "根据行序号设置表格某行某个字段值"
+    },
+    "editTable-set-table-data": {
+        "scope": "javascript",
+        "prefix": "editTable-set-table-data",
+        "body": ["/*设置表格数据*/",
+            "editTable.setTableData(tableId, ",
+            "   {rows: []} /*传入的data数据,主要主要是格式为{rows: []}的数据*/,",
+            "   true /*isCache是否缓存*/, ",
+            "   false /*isTop是否回到顶部*/",
+            ");"],
+        "description": "设置编辑表格数据"
+    },
+    "editTable-cancel-edit": {
+        "scope": "javascript",
+        "prefix": "editTable-cancel-edit",
+        "body": ["/*取消编辑，还原数据*/",
+            "editTable.cancelEdit(tableId, callback);"],
+        "description": "取消编辑，还原数据"
+    },
+    "editTable-set-status": {
+        "scope": "javascript",
+        "prefix": "editTable-set-status",
+        "body": ["/*设置表格编辑态/浏览态*/",
+            "editTable.setStatus(tableId, 'edit/browse', callback);"],
+        "description": "设置表格编辑态/浏览态"
+    },
+    "editTable-get-changed-rows": {
+        "scope": "javascript",
+        "prefix": "editTable-get-changed-rows",
+        "body": ["/*获取表格修改过的数据*/",
+            "const changedRows = editTable.getChangedRows(tableId);"],
+        "description": "获取表格修改过的数据"
+    },
+    "editTable-set-value-by-key-rowid": {
+        "scope": "javascript",
+        "prefix": "editTable-set-value-by-key-rowid",
+        "body": ["/*根据rowid设置表格某行某个字段值*/",
+            "editTable.setValByKeyAndRowId(tableId, ",
+            "   rowid /*行id/,",
+            "   key /*columns的键值*/, ",
+            "   { value, display, scale, isEdit } /*需要设置的值*/ ",
+            ");"],
+            "description": "根据rowid设置表格某行某个字段值"
+    },
+    "editTable-get-value-by-key-index": {
+        "scope": "javascript",
+        "prefix": "editTable-get-value-by-key-index",
+        "body": ["/*根据index获取表格某行某个字段值*/",
+            "const cellValue = editTable.getValByKeyAndIndex(tableId, index, key);"],
+        "description": "根据index获取表格某行某个字段值"
+    },
+    "editTable-get-value-by-key-rowid": {
+        "scope": "javascript",
+        "prefix": "editTable-get-value-by-key-rowid",
+        "body": ["/*根据rowId设置获取某行某个字段值*/",
+            "const cellValue = editTable.getValByKeyAndRowId(tableId, rowid, key);"],
+        "description": "根据rowId设置获取某行某个字段值"
+    },
+    "editTable-set-editable-by-key": {
+        "scope": "javascript",
+        "prefix": "editTable-set-editable-by-key",
+        "body": ["/*通过rowid和键设置表格某行某个字段编辑性*/",
+            "editTable.setEditableByKey(tableId, ",
+            "   rowid /*行id/,",
+            "   key /*columns的键值*/, ",
+            "   flag /*true可编辑/false不可编辑*/ ",
+            ");"],
+            "description": "通过rowid和键设置表格某行某个字段编辑性"
+    },
+    "editTable-get-column-value": {
+        "scope": "javascript",
+        "prefix": "editTable-get-column-value",
+        "body": ["/*获取表格某列数据*/",
+            "const colValue = editTable.getColValue(tableId, key);"],
+         "description": "获取表格某列数据"
+    },
+    "editTable-set-column-value": {
+        "scope": "javascript",
+        "prefix": "editTable-set-column-value",
+        "body": ["/*设置表格某列数据*/",
+            "editTable.setColValue(tableId, ",
+            "   key /*columns的键值*/, ",
+            "   { value, display, scale } /*需要设置的值*/ ",
+            ");"],
+        "description": "设置表格某列数据"
+    },
+    "editTable-get-checked-value": {
+        "scope": "javascript",
+        "prefix": "editTable-get-checked-value",
+        "body": ["/*获取表格选中行*/",
+            "const checkedRows = editTable.getTableCheckedRows(tableId);"],
+        "description": "获取表格选中行"
+    },
+    "editTable-select-all-rows": {
+        "scope": "javascript",
+        "prefix": "editTable-select-all-rows",
+        "body": ["/*选中/取消选中表格所有行*/",
+            "editTable.selectAllTableRows(tableId, checked /*true选中/false不选中*/);"],
+        "description": "选中/取消选中表格所有行"
+    },
+    "editTable-delete-rows-by-index": {
+        "scope": "javascript",
+        "prefix": "editTable-delete-rows-by-index",
+        "body": ["/*通过index删除行*/",
+            "editTable.deleteRowsByIndex(tableId, index, false /*是否彻底删除*/, callback);"],
+        "description": "通过index删除行"
+    },
+    "editTable-delete-rows-by-rowid": {
+        "scope": "javascript",
+        "prefix": "editTable-delete-rows-by-rowid",
+        "body": ["/*通过rowid删除行*/",
+            "editTable.deleteRowsByRowId(tableId, rowid, false /*是否彻底删除*/);"],
+        "description": "通过rowid删除行"
+    },
+    "editTable-focus-row-by-index": {
+        "scope": "javascript",
+        "prefix": "editTable-focus-row-by-index",
+        "body": ["/*focus某一行*/",
+            "editTable.focusRowByIndex(tableId, index, callback);"],
+        "description": "focus某一行"
+    },
+    "editTable-set-row-by-index": {
+        "scope": "javascript",
+        "prefix": "editTable-set-row-by-index",
+        "body": ["/*通过index设置一行数据*/",
+            "editTable.setRowByIndex(tableId, record, index);"],
+        "description": "通过index设置一行数据"
+    }
+}

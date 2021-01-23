@@ -21,7 +21,11 @@
 		"snippets": [
 			{
 				"language": "javascript",
-				"path": "./snippets/snippets.json"
+				"path": "./snippets/editTable-snippets.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/form-snippets.json"
 			}
 		]
 	},
