@@ -3,23 +3,22 @@
 	"displayName": "ncchr-snippets",
 	"description": "ncchr代码辅助工具",
 	"version": "0.0.1",
-	"repository": { 
-		"type": "git", 
+	"publisher": "guobg828",
+	"repository": {
+		"type": "git",
 		"url": "https://github.com/guobaogang/ncchr-snippets.git"
 	},
 	"engines": {
 		"vscode": "^1.52.0"
 	},
 	"categories": [
+		"Snippets",
 		"Other"
 	],
-	"activationEvents": [
-		"onCommand:ncchr-snippets.helloWorld"
-	],
+	"activationEvents": [],
 	"main": "./dist/extension.js",
 	"contributes": {
-		"snippets": [
-			{
+		"snippets": [{
 				"language": "javascript",
 				"path": "./snippets/editTable-snippets.json"
 			},
