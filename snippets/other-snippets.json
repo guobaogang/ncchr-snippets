@@ -1,0 +1,15 @@
+{
+    "create-button": {
+        "scope": "javascript",
+        "prefix": "create-button",
+        "body": [
+            "{",
+            "    createButtonApp({",
+            "        area: 'head', /*按钮区域编码*/ ",
+            "        onButtonClick: this.onButtonClick",
+            "    })",
+            "}"
+        ],
+        "description": "创建按钮"
+    }
+}

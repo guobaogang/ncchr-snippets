@@ -1,0 +1,199 @@
+{
+    "on-editTable-before-event": {
+        "scope": "javascript",
+        "prefix": "on-editTable-before-event",
+        "body": [
+            "/**",
+            "* editTable编辑前事件",
+            "* @param props",
+            "* @param module 表格id",
+            "* @param item 当前字段模板",
+            "* @param index 当前行index",
+            "* @param currentVal 当前cell数据",
+            "* @param record 当前行数据",
+            "*/",
+            "onEditTableBeforeEvent = (props, module, item, index, currentVal, record) => {",
+            "    return true;",
+            "}"
+        ],
+        "description": "editTable编辑前事件"
+    },
+    "on-editTable-after-event": {
+        "scope": "javascript",
+        "prefix": "on-editTable-after-event",
+        "body": [
+            "/**",
+            "* 表格编辑后事件",
+            "* @param props",
+            "* @param moduleId 表格id",
+            "* @param key 当前字段attrcode",
+            "* @param value 当前字段value",
+            "* @param changedrows 当前字段变更前后数据",
+            "* @param index 当前行index",
+            "* @param record 当前行数据",
+            "*/",
+            "detailAfterAction = (props, moduleId, key, value, changedrows, index, record) => {",
+            "   ",
+            "}"
+        ],
+        "description": "editTable编辑后事件"
+    },
+    "on-button-click": {
+        "scope": "javascript",
+        "prefix": "on-button-click",
+        "body": [
+            "/**",
+            "* 注册按钮点击事件",
+            "* @param props",
+            "* @param btnCode 按钮编码",
+            "*/",
+            "onButtonClick = (props, btnCode) => {",
+            "    switch (btnCode) {",
+            "        case 'add':",
+            "            this.add();",
+            "            break;",
+            "        default:",
+            "            break;",
+            "    }",
+            "};"
+        ],
+        "description": "注册按钮点击事件"
+    },
+    "update-button-status": {
+        "scope": "javascript",
+        "prefix": "update-button-status",
+        "body": [
+            "/**",
+            "* 更新按钮状态",
+            "*/",
+            "updateButtonStatus = () => {",
+            "    const {button} = this.comp.props;",
+            "    const flag = true;",
+            "    button.setButtonVisible({",
+            "        'add': !flag",
+            "    });",
+            "    button.setButtonDisabled({",
+            "        Add: !!flag",
+            "    });",
+            "};"
+        ],
+        "description": "更新按钮状态"
+    },
+    "ncc-server-request": {
+        "scope": "javascript",
+        "prefix": "ncc-server-request",
+        "body": [
+            "/**",
+            "*  调用ajax请求",
+            "*/",
+            "nccServerRequest = async () => {",
+            "    const {props} = this.comp;",
+            "    const {dispatch, main} = props;",
+            "    const {language} = main;",
+            "    let res = await dispatch({",
+            "        type: 'main/serverName',",
+            "        payload: {",
+            "           ",
+            "        }",
+            "    });",
+            "    if (res.success) {",
+            "       ",
+            "    }",
+            "}"
+        ],
+        "description": "调用ajax请求"
+    },
+    "ncc-update-data": {
+        "scope": "javascript",
+        "prefix": "ncc-update-data",
+        "body": [
+            "/**",
+            "* ncc更新store数据",
+            "*/",
+            "nccUpdateData = async () => {",
+            "    const {props} = this.comp;",
+            "    const {dispatch} = props;",
+            "    await dispatch({",
+            "        type: 'main/update',",
+            "        payload: {}",
+            "    });",
+            "}"
+        ],
+        "description": "ncc更新store数据"
+    },
+    "meta-add-operation-col": {
+        "scope": "javascript",
+        "prefix": "meta-add-operation-col",
+        "body": [
+            "/**",
+            "* 修改模板，在表格中添加操作列",
+            "*/",
+            "metaAddOperationCol = () => {",
+            "    const {props} = this.comp;",
+            "    const {meta} = props;",
+            "    const temp = meta.getMeta();",
+            "    temp['grid'].items.push({",
+            "        itemtype: 'customer',",
+            "        width: '80px',",
+            "        label: '操作',",
+            "        visible: true,",
+            "        fixed: 'right',",
+            "        attrcode: 'opr',",
+            "        render: (text, record, index) => {",
+            "            return (",
+            "                <div>",
+            "                    <a",
+            "                        href='javascript:void(0)'",
+            "                        className='operator-btn'",
+            "                        onClick={() => {",
+            "                            this.operation(record)",
+            "                        }}",
+            "                    >",
+            "                        操作",
+            "                    </a>",
+            "                </div>",
+            "            );",
+            "        }",
+            "    })",
+            "    meta.setMeta(temp);",
+            "};"
+        ],
+        "description": "修改模板，在表格中添加操作列"
+    },
+    "on-form-before-event": {
+        "scope": "javascript",
+        "prefix": "on-form-before-event",
+        "body": [
+            "/**",
+            "* form编辑前事件",
+            "* @param props",
+            "* @param areaId formId",
+            "* @param itemId 当前字段attrcode",
+            "* @param value 当前字段value",
+            "* @param formState 当前formstate",
+            "*/",
+            "onFormBeforeEvent = (props, areaId, itemId, value, formState)=>{",
+            "    return true;",
+            "}"
+        ],
+        "description": "form编辑前事件"
+    },
+    "on-form-after-event": {
+        "scope": "javascript",
+        "prefix": "on-form-after-event",
+        "body": [
+            "/**",
+            "* form编辑后事件",
+            "* @param props",
+            "* @param areaId formid",
+            "* @param itemId 当前字段attrcode",
+            "* @param value  当前字段value",
+            "* @param oldValue 当前字段编辑前value",
+            "*/",
+            "onFormAfterEvent = (props, areaId, itemId, value, oldValue) => {",
+            "",
+            "}"
+        ],
+        "description": "form编辑后事件"
+    }
+}

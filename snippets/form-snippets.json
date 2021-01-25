@@ -2,7 +2,124 @@
     "create-form": {
         "scope": "javascript",
         "prefix": "create-form",
-        "body": ["{form.createForm(formId)}"],
+        "body": [
+            "{",
+            "    form.createForm(fromId,{",
+            "        onBeforeEvent: this.onFormBeforeEvent,",
+            "        onAfterEvent: this.onFormAfterEvent",
+            "    })",
+            "}"
+        ],
         "description": "创建表单"
+    },
+    "form-get-all-value": {
+        "scope": "javascript",
+        "prefix": "form-get-all-value",
+        "body": [
+            "/*获取表单所有数据*/",
+            "const allFormValue = form.getAllFormValue(moduleIds/*字符串或数据，可取多个表单数据*/);"
+        ],
+        "description": "获取表单所有数据"
+    },
+    "form-set-data-value": {
+        "scope": "javascript",
+        "prefix": "form-set-data-value",
+        "body": [
+            "/*设置表单全部数据*/",
+            "form.setAllFormValue({",
+            "    formId: formData /*格式为{rows:[]}*/",
+            "});"
+        ],
+        "description": "设置表单全部数据"
+    },
+    "form-cancel": {
+        "scope": "javascript",
+        "prefix": "form-cancel",
+        "body": [
+            "/*表单取消方法*/",
+            "form.cancel(ids/*String/Array*/);"
+        ],
+        "description": "表单取消方法"
+    },
+    "form-set-status": {
+        "scope": "javascript",
+        "prefix": "form-set-status",
+        "body": [
+            "/*设置表单status*/",
+            "form.setFormStatus(formId, \"browse/edit\");"
+        ],
+        "description": "设置表单status"
+    },
+    "form-get-status": {
+        "scope": "javascript",
+        "prefix": "form-get-status",
+        "body": [
+            "/*获取表单status*/",
+            "const formStatus = form.getFormStatus(formId);"
+        ],
+        "description": "获取表单status"
+    },
+    "form-empty-all-value": {
+        "scope": "javascript",
+        "prefix": "form-empty-all-value",
+        "body": [
+            "/*清空表单所有数据*/",
+            "form.EmptyAllFormValue(formId, exceptArr/*array，不需要清空的字段数据*/);"
+        ],
+        "description": "清空表单所有数据"
+    },
+    "form-check-required": {
+        "scope": "javascript",
+        "prefix": "form-check-required",
+        "body": [
+            "/*检验是否必填*/",
+            "const formRequiredFlag = form.isCheckNow(formId);"
+        ],
+        "description": "检验是否必填"
+    },
+    "form-get-form-items-value": {
+        "scope": "javascript",
+        "prefix": "form-get-form-items-value",
+        "body": [
+            "/*获取表单中某个字段的值*/",
+            "const formItemsValue = form.getFormItemsValue(formId, data/*string/array*/);"
+        ],
+        "description": "获取表单中某个字段的值"
+    },
+    "form-set-form-items-value": {
+        "scope": "javascript",
+        "prefix": "form-set-form-items-value",
+        "body": [
+            "/*设置表单中某个字段的值*/",
+            "form.setFormItemsValue(formId, values/*Object,格式为{'attrcode': {value: '', display: ''}}*/)"
+        ],
+        "description": "设置表单中某个字段的值"
+    },
+    "form-set-form-items-disabled": {
+        "scope": "javascript",
+        "prefix": "form-get-form-items-disabled",
+        "body": [
+            "/*设置表单编辑性*/",
+            "form.setFormItemsDisabled(formId, values/*Object,格式为{'attrcode': true/false}*/)"
+        ],
+        "description": "设置表单编辑性"
+    },
+    "form-set-form-items-visible": {
+        "scope": "javascript",
+        "prefix": "form-get-form-items-visible",
+        "body": [
+            "/*设置表单可见性*/",
+            "form.setFormItemsVisible(formId, values/*Object,格式为{'attrcode': true/false}*/)"
+        ],
+        "description": "设置表单可见性"
+    },
+    "form-set-form-items-required": {
+        "scope": "javascript",
+        "prefix": "form-get-form-items-visible",
+        "body": [
+            "/*设置表单某些字段的必输性*/",
+            "form.setFormItemsRequired(formId, values/*Object,格式为{'attrcode': true/false}*/)"
+        ],
+        "description": "设置表单某些字段的必输性"
     }
 }

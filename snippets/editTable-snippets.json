@@ -5,12 +5,12 @@
         "body": ["{editTable.createEditTable(tableId, {",
             "   showIndex: true,",
             "   showCheck: true,",
-            "   showTotal: false",
-            "   cancelCustomRightMenu: false",
-            "   height: this.getTableHeight()",
-            "   onBeforeEvent: this.onBeforeEvent",
-            "   onAfterEvent: this.onAfterEvent",
-            "   onRowClick: this.onRowClick",
+            "   showTotal: false,",
+            "   cancelCustomRightMenu: false,",
+            "   height: this.getTableHeight(),",
+            "   onBeforeEvent: this.onEditTableBeforeEvent,",
+            "   onAfterEvent: this.onEditTableAfterEvent,",
+            "   onRowClick: this.onRowClick,",
             "   onRowDoubleClick: this.onRowDoubleClick",
         "})}"],
         "description": "创建编辑表格"
@@ -197,5 +197,68 @@
         "body": ["/*通过index设置一行数据*/",
             "editTable.setRowByIndex(tableId, record, index);"],
         "description": "通过index设置一行数据"
+    },
+    "editTable-set-editable-row-by-rowid": {
+        "scope": "javascript",
+        "prefix": "editTable-set-editable-row-by-rowid",
+        "body": ["/*通过rowId设置表格某些行的编辑性*/",
+            "editTable.setEditableRowByRowId(tableId, rowid, flag/*true可编辑/false不可编辑*/);"],
+        "description": "通过rowId设置表格某些行的编辑性"
+    },
+    "editTable-set-editable-row-by-index": {
+        "scope": "javascript",
+        "prefix": "editTable-set-editable-row-by-index",
+        "body": ["/*通过Index设置表格某些行的编辑性*/",
+            "editTable.setEditableRowByIndex(tableId, index, flag/*true可编辑/false不可编辑*/);"],
+        "description": "通过Index设置表格某些行的编辑性"
+    },
+    "editTable-set-editable-rowkey-by-rowid": {
+        "scope": "javascript",
+        "prefix": "editTable-set-editable-rowkey-by-rowid",
+        "body": ["/*通过Index设置表格某些行的编辑性*/",
+            "editTable.setEditableRowKeyByRowId(tableId, rowid, key, flag/*true可编辑/false不可编辑*/);"],
+        "description": "通过Index设置表格某些行的编辑性"
+    },
+    "editTable-set-editable-rowkey-by-index": {
+        "scope": "javascript",
+        "prefix": "editTable-set-editable-rowkey-by-index",
+        "body": ["/*通过index设置表格某些行的某些字段编辑性*/",
+            "editTable.setEditableRowKeyByIndex(tableId, index, key, flag/*true可编辑/false不可编辑*/);"],
+        "description": "通过index设置表格某些行的某些字段编辑性"
+    },
+    "editTable-set-checkbox-disabled": {
+        "scope": "javascript",
+        "prefix": "editTable-set-checkbox-disabled",
+        "body": ["/*设置每行第一个Checkbox是否禁用*/",
+            "editTable.setCheckboxDisabled(tableId, index, flag/*true禁用/false不禁用*/);"],
+        "description": "设置每行第一个Checkbox是否禁用"
+    },
+    "editTable-set-all-checkbox-able": {
+        "scope": "javascript",
+        "prefix": "editTable-set-all-checkbox-able",
+        "body": ["/*设置设置所有多选框禁用和启用的方法*/",
+            "editTable.setAllCheckboxAble(tableId, flag/*true禁用/false不禁用*/);"],
+        "description": "设置设置所有多选框禁用和启用的方法"
+    },
+    "editTable-select-table-rows": {
+        "scope": "javascript",
+        "prefix": "editTable-select-table-rows",
+        "body": ["/*设置某些行的选中状态*/",
+            "editTable.selectTableRows(tableId, index, flag/*true选中/false不选中*/);"],
+        "description": "设置某些行的选中状态"
+    },
+    "editTable-check-required": {
+        "scope": "javascript",
+        "prefix": "editTable-check-required",
+        "body": ["/*检验必输项的方法*/",
+            "const requiredFlag = editTable.checkRequired(tableId, rows/*所要校验的行数据,格式为 [{status: '0', rowid: 'hhghg-34343m43-434343wws', values: { nallotmny: {value: '1199.000'}}}]*/);"],
+        "description": "检验必输项的方法"
+    },
+    "editTable-set-editable-key-edit": {
+        "scope": "javascript",
+        "prefix": "editTable-set-editable-key-edit",
+        "body": ["/*统一设置表格字段的编辑性*/",
+            "editTable.setEditableKeyEdit(tableId, data /*格式为[{index: 1, keys: {name: false, age: true}}, {index: 2, keys: {name: false, age: true}}]*/);"],
+        "description": "统一设置表格字段的编辑性"
     }
 }

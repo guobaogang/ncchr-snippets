@@ -26,6 +26,18 @@
 			{
 				"language": "javascript",
 				"path": "./snippets/form-snippets.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/function-snippets.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/other-snippets.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/template-snippets.json"
 			}
 		]
 	},
