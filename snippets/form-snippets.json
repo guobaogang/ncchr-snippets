@@ -17,7 +17,8 @@
         "prefix": "form-get-all-value",
         "body": [
             "/*获取表单所有数据*/",
-            "const allFormValue = form.getAllFormValue(moduleIds/*字符串或数据，可取多个表单数据*/);"
+            "/*moduleIds 字符串或数据，可取多个表单数据*/",
+            "const allFormValue = form.getAllFormValue(moduleIds);"
         ],
         "description": "获取表单所有数据"
     },
@@ -26,8 +27,9 @@
         "prefix": "form-set-data-value",
         "body": [
             "/*设置表单全部数据*/",
+            "/*formData 格式为{rows:[]}*/",
             "form.setAllFormValue({",
-            "    formId: formData /*格式为{rows:[]}*/",
+            "    formId: formData",
             "});"
         ],
         "description": "设置表单全部数据"
@@ -64,7 +66,8 @@
         "prefix": "form-empty-all-value",
         "body": [
             "/*清空表单所有数据*/",
-            "form.EmptyAllFormValue(formId, exceptArr/*array，不需要清空的字段数据*/);"
+            "/*exceptArr array，不需要清空的字段数据 */",
+            "form.EmptyAllFormValue(formId, exceptArr);"
         ],
         "description": "清空表单所有数据"
     },
@@ -82,7 +85,8 @@
         "prefix": "form-get-form-items-value",
         "body": [
             "/*获取表单中某个字段的值*/",
-            "const formItemsValue = form.getFormItemsValue(formId, data/*string/array*/);"
+            "/*data string/array*/",
+            "const formItemsValue = form.getFormItemsValue(formId, data);"
         ],
         "description": "获取表单中某个字段的值"
     },
@@ -91,7 +95,8 @@
         "prefix": "form-set-form-items-value",
         "body": [
             "/*设置表单中某个字段的值*/",
-            "form.setFormItemsValue(formId, values/*Object,格式为{'attrcode': {value: '', display: ''}}*/)"
+            "/*values Object,格式为{'attrcode': {value: '', display: ''}}*/",
+            "form.setFormItemsValue(formId, values)"
         ],
         "description": "设置表单中某个字段的值"
     },
@@ -100,7 +105,8 @@
         "prefix": "form-get-form-items-disabled",
         "body": [
             "/*设置表单编辑性*/",
-            "form.setFormItemsDisabled(formId, values/*Object,格式为{'attrcode': true/false}*/)"
+            "/*values Object,格式为{'attrcode': true/false}*/",
+            "form.setFormItemsDisabled(formId, values)"
         ],
         "description": "设置表单编辑性"
     },
@@ -109,7 +115,8 @@
         "prefix": "form-get-form-items-visible",
         "body": [
             "/*设置表单可见性*/",
-            "form.setFormItemsVisible(formId, values/*Object,格式为{'attrcode': true/false}*/)"
+            "/*values Object,格式为{'attrcode': true/false}*/",
+            "form.setFormItemsVisible(formId, values)"
         ],
         "description": "设置表单可见性"
     },
@@ -118,7 +125,8 @@
         "prefix": "form-get-form-items-visible",
         "body": [
             "/*设置表单某些字段的必输性*/",
-            "form.setFormItemsRequired(formId, values/*Object,格式为{'attrcode': true/false}*/)"
+            "/*values Object,格式为{'attrcode': true/false}*/",
+            "form.setFormItemsRequired(formId, values)"
         ],
         "description": "设置表单某些字段的必输性"
     }
