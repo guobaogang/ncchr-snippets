@@ -62,7 +62,8 @@
         "scope": "javascript",
         "prefix": "editTable-show-col-by-key",
         "body": ["/*根据id和column的key显示某列*/",
-            "editTable.showEditTableColByKey(tableId, key);"]
+            "editTable.showEditTableColByKey(tableId, key);"],
+            "description": "根据id和column的key显示某列"
     },
     "editTable-set-value-by-key-index": {
         "scope": "javascript",
@@ -234,10 +235,10 @@
     "editTable-set-editable-rowkey-by-rowid": {
         "scope": "javascript",
         "prefix": "editTable-set-editable-rowkey-by-rowid",
-        "body": ["/*通过Index设置表格某些行的编辑性*/",
+        "body": ["/*通过rowid设置表格某些行的某些字段编辑性*/",
             "/*flag true可编辑/false不可编辑*/",
             "editTable.setEditableRowKeyByRowId(tableId, rowid, key, flag);"],
-        "description": "通过Index设置表格某些行的编辑性"
+        "description": "通过rowid设置表格某些行的某些字段编辑性"
     },
     "editTable-set-editable-rowkey-by-index": {
         "scope": "javascript",
